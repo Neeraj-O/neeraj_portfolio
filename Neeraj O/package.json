@@ -1,0 +1,15 @@
+{
+  "name": "Neeraj O",
+  "version": "1.0.0",
+  "description": "Neeraj O Personal Portfolio Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tailwindcss -i ./src/input.css -o ./assets/style.css --watch"
+  },
+  "author": "Neeraj",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
