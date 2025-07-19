@@ -1,8 +1,8 @@
 /*================================================
 *
-* Template name : Mone - Tailwind Personal Portfolio Template
+* Template name : Neeraj O Personal Portfolio Template
 * Version       : 1.0
-* Author        : FlaTheme
+* Author        : Neeraj
 * Author URL    : https://themeforest.net/user/flatheme
 *
 * Table of Contents :
