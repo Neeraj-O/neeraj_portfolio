@@ -248,22 +248,26 @@ if (contactForm) {
 
     var formData = new FormData(this);
 
-    fetch("assets/php/contact-form.php", {
-      method: "POST",
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.status === "success") {
-        document.getElementById("success").classList.add("show-result"); // Show Success Message
-        contactForm.reset(); // Reset the form
-      } else {
-        document.getElementById("error").classList.add("show-result"); // Show Error Message
-      }
-    })
-    .catch(error => {
-      document.getElementById("error").classList.add("show-result"); // Show Error Message
-      console.error("There was a problem with the fetch operation:", error);
+    fetch("https://formspree.io/f/xzzvznrl", {
+  method: "POST",
+  body: formData,
+  headers: {
+    "Accept": "application/json", // Tell Formspree to send JSON response
+  }
+})
+.then(response => response.json())
+.then(data => {
+  if (data.ok) {
+    document.getElementById("success").classList.add("show-result"); // Show Success Message
+    contactForm.reset(); // Reset the form
+  } else {
+    document.getElementById("error").classList.add("show-result"); // Show Error Message
+    console.error("Formspree Error:", data);
+  }
+})
+.catch(error => {
+  document.getElementById("error").classList.add("show-result"); // Show Error Message
+  console.error("There was a problem with the fetch operation:", error);
     });
   });
 }
